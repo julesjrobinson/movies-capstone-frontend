@@ -5,6 +5,7 @@ import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
 import { MoviesIndex } from "./MoviesIndex";
 import { FavoritesIndex } from "./FavoritesIndex";
+import { FavoritesNew } from "./FavoritesNew";
 import { MoviesNew } from "./MoviesNew";
 import { MoviesShow } from "./MoviesShow";
 import { Modal } from "./Modal";
@@ -28,6 +29,14 @@ export function Home() {
     axios.get("http://localhost:3000/favorites.json").then((response) => {
       console.log("favorites", response.data);
       setFavorites(response.data);
+    });
+  };
+
+  const handleCreateFavorite = (params, successCallback) => {
+    console.log("handleCreateFavorite", params);
+    axios.post("http://localhost:3000/favorites.json", params).then((response) => {
+      setFavorites([...PushSubscriptionOptions, response.data]);
+      successCallback();
     });
   };
 
@@ -70,6 +79,7 @@ export function Home() {
       <MoviesNew onCreateMovie={handleCreateMovie} />
       <MoviesIndex movies={movies} onShowMovie={handleShowMovie} />
       <FavoritesIndex favorites={favorites} />
+      <FavoritesNew onCreateFavorite={handleCreateFavorite} />
       <Modal show={isMoviesShowVisible} onClose={handleClose}>
         <MoviesShow movie={currentMovie} onDestroyMovie={handleDestroyMovie} />
       </Modal>
