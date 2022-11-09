@@ -15,6 +15,7 @@ export function Home() {
   const [movies, setMovies] = useState([]);
   const [isMoviesShowVisible, setIsMoviesShowVisible] = useState(false);
   const [currentMovie, setCurrentMovie] = useState({});
+  const [isFavoritesShowVisible, setIsFavoritesShowVisible] = useState(false);
 
   const handleIndexMovies = () => {
     console.log("handleIndexMovies");

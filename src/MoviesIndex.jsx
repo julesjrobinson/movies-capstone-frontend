@@ -2,15 +2,22 @@ export function MoviesIndex(props) {
   return (
     <div>
       <h1>ALL MOVIES!</h1>
-      {props.movies.map((movie) => (
-        <div key={movie.id}>
-          <h2>{movie.name}</h2>
-          <img src={movie.image_url} />
-          <p>Description: {movie.description}</p>
-          <p>Genre: {movie.genre}</p>
-          <button onClick={() => props.onShowMovie(movie)}>More Info</button>
-        </div>
-      ))}
+      <div className="row">
+        {props.movies.map((movie) => (
+          <div className="col-md-3 mb-4" key={movie.id}>
+            <div className="card">
+              <img src={movie.image_url} className="card-img-top" alt="..." />
+              <div className="card-body">
+                <h5 className="card-title">{movie.title}</h5>
+                <p className="card-text">Movie: {movie.movie}</p>
+                <a href="#" className="btn btn-primary" onClick={() => props.onSelectMovie(movie)}>
+                  More info
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
