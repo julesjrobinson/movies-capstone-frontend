@@ -10,13 +10,18 @@ export function FavoritesNew(props) {
       <h1>Add Your Favorite Movie!</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          MovieID: <input movie_id="movie_id" type="text" />
+          MovieID:
+          <select name="movie_id">
+            {props.movies.map((movie) => (
+              <option value={movie.id}>{movie.name}</option>
+            ))}
+          </select>
         </div>
         <div>
           UserID: <input user_id="user_id" type="text" />
         </div>
 
-        <button type="submit">Create photo</button>
+        <button type="submit">Create Favorite</button>
       </form>
     </div>
   );

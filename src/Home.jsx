@@ -80,7 +80,7 @@ export function Home() {
       <MoviesNew onCreateMovie={handleCreateMovie} />
       <MoviesIndex movies={movies} onShowMovie={handleShowMovie} />
       <FavoritesIndex favorites={favorites} />
-      <FavoritesNew onCreateFavorite={handleCreateFavorite} />
+      <FavoritesNew movies={movies} onCreateFavorite={handleCreateFavorite} />
       <Modal show={isMoviesShowVisible} onClose={handleClose}>
         <MoviesShow movie={currentMovie} onDestroyMovie={handleDestroyMovie} />
       </Modal>

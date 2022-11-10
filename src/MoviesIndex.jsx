@@ -11,7 +11,7 @@ export function MoviesIndex(props) {
                 <h5 className="card-title">{movie.title}</h5>
                 <p className="card-text">Movie: {movie.movie}</p>
                 <a href="#" className="btn btn-primary" onClick={() => props.onSelectMovie(movie)}>
-                  More info
+                  <button onClick={() => props.onShowMovie(movie)}>More Info</button>
                 </a>
               </div>
             </div>
