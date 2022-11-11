@@ -26,5 +26,3 @@ export function FavoritesNew(props) {
     </div>
   );
 }
-
-// 11-7-22 stopped after FINISHING photos new jsx before creating new src modal/css file.

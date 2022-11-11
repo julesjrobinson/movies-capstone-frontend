@@ -7,6 +7,7 @@ import { MoviesIndex } from "./MoviesIndex";
 import { FavoritesIndex } from "./FavoritesIndex";
 import { FavoritesNew } from "./FavoritesNew";
 import { MoviesNew } from "./MoviesNew";
+
 import { MoviesShow } from "./MoviesShow";
 import { Modal } from "./Modal";
 
@@ -76,9 +77,10 @@ export function Home() {
       <Signup />
       <Login />
       <LogoutLink />
-      <h1>Welcome to React!</h1>
+      <h1>Welcome to Pick-a-Flick!</h1>
       <MoviesNew onCreateMovie={handleCreateMovie} />
       <MoviesIndex movies={movies} onShowMovie={handleShowMovie} />
+
       <FavoritesIndex favorites={favorites} />
       <FavoritesNew movies={movies} onCreateFavorite={handleCreateFavorite} />
       <Modal show={isMoviesShowVisible} onClose={handleClose}>

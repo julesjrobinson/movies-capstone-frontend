@@ -7,6 +7,7 @@ import { About } from "./About";
 import { LoginPage } from "./LoginPage";
 import { SignupPage } from "./SignupPage";
 import { MoviesIndexPage } from "./MoviesIndexPage";
+import { MoviesSearch } from "./MoviesSearch";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/movies" element={<MoviesIndexPage />} />
+          <Route path="/moviessearch" element={<MoviesSearch />} />
         </Routes>
       </div>
       <Footer />

@@ -9,9 +9,8 @@ export function Header() {
       <Link to="/favorites">Favorites</Link>
       <Link to="/login">Login</Link>
       <Link to="/signup">Signup</Link>
-      <Link to="movies">Movies</Link>
+      <Link to="/movies">Movies</Link>
+      <Link to="/moviessearch">MoviesSearch</Link>
     </div>
   );
 }
-// To Do ..finished routers don't think it's working.
-// make signup login etc seperate pages.
