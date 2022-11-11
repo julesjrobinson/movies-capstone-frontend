@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Signup } from "./Signup";
-import { Login } from "./Login";
+
 import { LogoutLink } from "./LogoutLink";
 import { MoviesIndex } from "./MoviesIndex";
 import { FavoritesIndex } from "./FavoritesIndex";
@@ -74,8 +73,6 @@ export function Home() {
 
   return (
     <div>
-      <Signup />
-      <Login />
       <LogoutLink />
       <h1>Welcome to Pick-a-Flick!</h1>
       <MoviesNew onCreateMovie={handleCreateMovie} />

@@ -11,6 +11,7 @@ export function Header() {
       <Link to="/signup">Signup</Link>
       <Link to="/movies">Movies</Link>
       <Link to="/moviessearch">MoviesSearch</Link>
+      <Link to="/streaming">StreamingSearch</Link>
     </div>
   );
 }

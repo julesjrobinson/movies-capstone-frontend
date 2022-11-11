@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-export function SteamingSearch() {
+export function StreamingSearch() {
   return (
     <div>
       <h1>Find Where It's Streaming!</h1>
