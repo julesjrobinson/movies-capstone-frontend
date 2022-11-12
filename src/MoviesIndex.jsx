@@ -9,9 +9,11 @@ export function MoviesIndex(props) {
               <img src={movie.image_url} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">{movie.title}</h5>
-                <p className="card-text">Movie: {movie.movie}</p>
+                <p className="card-text"> {movie.name}</p>
                 <a href="#" className="btn btn-primary" onClick={() => props.onSelectMovie(movie)}>
-                  <button onClick={() => props.onShowMovie(movie)}>More Info</button>
+                  <button className="btn" onClick={() => props.onShowMovie(movie)}>
+                    More Info
+                  </button>
                 </a>
               </div>
             </div>
