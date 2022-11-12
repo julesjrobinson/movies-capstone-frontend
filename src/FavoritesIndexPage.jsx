@@ -17,9 +17,15 @@ export function FavoritesIndexPage() {
 
   return (
     <div id="favorites-index">
-      <h1>All of Your Favorite Movies!</h1>
+      <h1>Your Favorite Movies!</h1>
       Search filter:{" "}
-      <input value={searchFilter} onChange={(event) => setSearchFilter(event.target.value)} type="text" list="names" />
+      <input
+        className="form-control"
+        value={searchFilter}
+        onChange={(event) => setSearchFilter(event.target.value)}
+        type="text"
+        list="names"
+      />
       <datalist id="names">
         {favorites.map((favorite) => (
           <option key={favorite.id}>{favorite.name}</option>
@@ -34,7 +40,7 @@ export function FavoritesIndexPage() {
                 <img src={favorite.image_url} className="card-img-top" alt="..." />
                 <div className="card-body">
                   <h5 className="card-title">{favorite.name}</h5>
-                  <p className="card-text">Favorite: {favorite.favorite}</p>
+
                   <a className="btn btn-primary" href={`/favorites/${favorite.id}`}>
                     Go to show page
                   </a>
