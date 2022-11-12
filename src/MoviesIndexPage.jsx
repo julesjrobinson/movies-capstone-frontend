@@ -40,7 +40,7 @@ export function MoviesIndexPage() {
                 <img src={movie.image_url} className="card-img-top" alt="..." />
                 <div className="card-body">
                   <h5 className="card-title">{movie.name}</h5>
-                  <p className="card-text">Movie: {movie.movie}</p>
+                  <p className="card-text"> {movie.movie}</p>
                   <a className="btn btn-primary" href={`/movies/${movie.id}`}>
                     Go to show page
                   </a>
