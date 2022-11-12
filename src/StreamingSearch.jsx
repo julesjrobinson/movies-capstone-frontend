@@ -6,9 +6,11 @@ export function StreamingSearch() {
       <h1>Find Where It's Streaming!</h1>
       <form>
         <div>
-          Search: <input name="name" type="text" />
+          Search: <input className="form-control" name="name" type="text" />
         </div>
-        <button type="submit">Search</button>
+        <button className="btn btn-primary mt-4" type="submit">
+          Search
+        </button>
       </form>
     </div>
   );
