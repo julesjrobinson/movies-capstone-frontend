@@ -8,8 +8,8 @@ export function FavoritesIndex(props) {
             <div className="card">
               <img src={favorite.image_url} className="card-img-top" alt="..." />
               <div className="card-body">
-                <h5 className="card-title">{favorite.title}</h5>
-                <p className="card-text">Favorite: {favorite.movie}</p>
+                <h5 className="card-title">{favorite.name}</h5>
+                <p className="card-text"> {favorite.movie}</p>
                 <a href="#" className="btn btn-primary" onClick={() => props.onSelectFavorite(favorite)}>
                   <button onClick={() => props.onShowFavorite(favorite)}> More info</button>
                 </a>
