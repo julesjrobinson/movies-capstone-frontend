@@ -21,7 +21,9 @@ export function FavoritesNew(props) {
           UserID: <input user_id="user_id" type="text" />
         </div>
 
-        <button type="submit">Create Favorite</button>
+        <button className="btn btn-primary" type="submit">
+          Create Favorite
+        </button>
       </form>
     </div>
   );
