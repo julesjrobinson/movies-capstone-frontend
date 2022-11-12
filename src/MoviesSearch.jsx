@@ -15,9 +15,11 @@ export function MoviesSearch(props) {
       <h1>Search Movies</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          Search: <input name="name" type="text" />
+          Search: <input name="name" className="form-control" />
         </div>
-        <button type="submit">Search</button>
+        <button className="btn btn-primary mt-4" type="submit">
+          Search
+        </button>
       </form>
 
       {movies.map((movie) => (
@@ -31,7 +33,9 @@ export function MoviesSearch(props) {
               <p className="card-text">Genre: {movie.Genre}</p>
               <p className="card-text">Rating: {movie.Rated}</p>
               <p className="card-text">Plot: {movie.Plot}</p>
-              <button>Favorite This Flick!</button>
+              <button className="btn btn-primary mt-4" type="submit">
+                Favorite This Flick!
+              </button>
             </div>
           </div>
         </div>

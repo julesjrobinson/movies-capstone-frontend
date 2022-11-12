@@ -50,3 +50,5 @@ export function Login() {
     </div>
   );
 }
+// to-do fix up remainder buttons and inputs like above.
+// get api hooked up more on backend. routes controller finish.
