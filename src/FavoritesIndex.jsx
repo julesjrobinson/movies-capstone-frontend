@@ -11,7 +11,7 @@ export function FavoritesIndex(props) {
                 <h5 className="card-title">{favorite.name}</h5>
                 <p className="card-text"> {favorite.movie}</p>
                 <a href="#" className="btn btn-primary" onClick={() => props.onSelectFavorite(favorite)}>
-                  <button className="btn" onClick={() => props.onShowFavorite(favorite)}>
+                  <button className="btn btn-primary" onClick={() => props.onShowFavorite(favorite)}>
                     {" "}
                     More info
                   </button>
