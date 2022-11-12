@@ -17,15 +17,21 @@ export function MoviesIndexPage() {
 
   return (
     <div id="movies-index">
-      <h1>All MOVIES</h1>
+      <h1>All of the Movies!</h1>
       Search filter:{" "}
-      <input value={searchFilter} onChange={(event) => setSearchFilter(event.target.value)} type="text" list="names" />
+      <input
+        className="form-control"
+        value={searchFilter}
+        onChange={(event) => setSearchFilter(event.target.value)}
+        type="text"
+        list="names"
+      />
       <datalist id="names">
         {movies.map((movie) => (
           <option key={movie.id}>{movie.name}</option>
         ))}
       </datalist>
-      <div className="row">
+      <div className="row mt-4">
         {movies
           .filter((movie) => movie.name.toLowerCase().includes(searchFilter.toLowerCase()))
           .map((movie) => (
