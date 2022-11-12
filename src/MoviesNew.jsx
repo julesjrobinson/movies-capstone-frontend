@@ -8,20 +8,23 @@ export function MoviesNew(props) {
   return (
     <div>
       <h1>New Movie</h1>
+      <p>Can't find what you're looking for? Add the movie here!</p>
       <form onSubmit={handleSubmit}>
         <div>
-          Name: <input name="name" type="text" />
+          Name: <input className="form-control" name="name" type="text" />
         </div>
         <div>
-          Url: <input name="url" type="text" />
+          Poster Url: <input className="form-control" name="url" type="text" />
         </div>
         <div>
-          Description: <input description="description" type="text" />
+          Description: <input className="form-control" description="description" type="text" />
         </div>
         <div>
-          Genre: <input genre="genre" type="text" />
+          Genre: <input className="form-control" genre="genre" type="text" />
         </div>
-        <button type="submit">Add New Movie</button>
+        <button className="btn btn-primary mt-4" type="submit">
+          Add New Movie
+        </button>
       </form>
     </div>
   );
