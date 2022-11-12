@@ -31,7 +31,7 @@ export function FavoritesIndexPage() {
           <option key={favorite.id}>{favorite.name}</option>
         ))}
       </datalist>
-      <div className="row">
+      <div className="row mt-4">
         {favorites
           .filter((favorite) => favorite.name.toLowerCase().includes(searchFilter.toLowerCase()))
           .map((favorite) => (
