@@ -38,11 +38,11 @@ export function Header() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/favorites">
+                {/* <a className="nav-link" href="/favorites">
                   Favorites
                 </a>
               </li>
-              <li className="nav-item">
+              <li className="nav-item"> */}
                 <a className="nav-link" href="/movies">
                   Movies
                 </a>
