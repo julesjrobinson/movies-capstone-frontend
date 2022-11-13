@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { LogoutLink } from "./LogoutLink";
 
 export function Header() {
   return (
@@ -51,6 +52,11 @@ export function Header() {
                   Search Movies
                 </a>
               </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/logout">
+                  Logout
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -64,6 +70,7 @@ export function Header() {
       {/* <Link to="/movies">Movies</Link> */}
       {/* <Link to="/moviessearch">MoviesSearch</Link> */}
       {/* <Link to="/streaming">StreamingSearch</Link> */}
+      {/* <LogoutLink /> */}
     </div>
   );
 }
