@@ -8,6 +8,7 @@ import { FavoritesNew } from "./FavoritesNew";
 import { MoviesNew } from "./MoviesNew";
 
 import { MoviesShow } from "./MoviesShow";
+import { FavoritesShow } from "./FavoritesShow";
 import { Modal } from "./Modal";
 
 export function Home() {
@@ -16,6 +17,7 @@ export function Home() {
   const [isMoviesShowVisible, setIsMoviesShowVisible] = useState(false);
   const [currentMovie, setCurrentMovie] = useState({});
   const [isFavoritesShowVisible, setIsFavoritesShowVisible] = useState(false);
+  const [currentFavorite, setCurrentFavorite] = useState({});
 
   const handleIndexMovies = () => {
     console.log("handleIndexMovies");
@@ -60,10 +62,28 @@ export function Home() {
     setIsMoviesShowVisible(false);
   };
 
+  const handleShowFavorite = (favorite) => {
+    console.log("handleshowFavorite", favorite);
+    setIsFavoritesShowVisible(true);
+    setCurrentFavorite(favorite);
+  };
+  const handleCloseFavorite = () => {
+    console.log("handleCLose");
+    setIsFavoritesShowVisible(false);
+  };
+
   const handleDestroyMovie = (movie) => {
     console.log("handleDestroyMovie", movie);
     axios.delete(`http://localhost:3000/movies/${movie.id}.json`).then((response) => {
       setMovies(movies.filter((p) => p.id !== movie.id));
+      handleClose();
+    });
+  };
+
+  const handleDestroyFavorite = (favorite) => {
+    console.log("handleDestroyfavorite", favorite);
+    axios.delete(`http://localhost:3000/favorites/${favorite.id}.json`).then((response) => {
+      setFavorites(favorites.filter((p) => p.id !== favorite.id));
       handleClose();
     });
   };
@@ -78,10 +98,13 @@ export function Home() {
       <MoviesNew onCreateMovie={handleCreateMovie} />
       <MoviesIndex movies={movies} onShowMovie={handleShowMovie} />
 
-      <FavoritesIndex favorites={favorites} />
+      <FavoritesIndex favorites={favorites} onShowFavorite={handleShowFavorite} />
       <FavoritesNew movies={movies} onCreateFavorite={handleCreateFavorite} />
       <Modal show={isMoviesShowVisible} onClose={handleClose}>
         <MoviesShow movie={currentMovie} onDestroyMovie={handleDestroyMovie} />
+      </Modal>
+      <Modal show={isFavoritesShowVisible} onClose={handleCloseFavorite}>
+        <FavoritesShow favorite={currentFavorite} onDestroyFavorite={handleDestroyFavorite} />
       </Modal>
     </div>
   );

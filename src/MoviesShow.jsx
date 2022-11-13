@@ -9,7 +9,7 @@ export function MoviesShow(props) {
       <p>Url: {props.movie.url}</p>
       <p>Description: {props.movie.description}</p>
       <p>Genre: {props.movie.genre}</p>
-      <button onClick={handleClick}>Remove Movie</button>
+      {/*  */}
     </div>
   );
 }

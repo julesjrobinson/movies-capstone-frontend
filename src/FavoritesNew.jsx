@@ -13,7 +13,9 @@ export function FavoritesNew(props) {
           MovieID:
           <select name="movie_id">
             {props.movies.map((movie) => (
-              <option value={movie.id}>{movie.name}</option>
+              <option key={movie.id} value={movie.id}>
+                {movie.name}
+              </option>
             ))}
           </select>
         </div>
