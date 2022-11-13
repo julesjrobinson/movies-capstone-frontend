@@ -12,6 +12,12 @@ export function MoviesIndexPage() {
       setMovies(response.data);
     });
   };
+  const handleCreateFavorite = (movie) => {
+    console.log("handleCreateFavorite");
+    axios.post("http://localhost:3000/favorites.json", { movie_id: movie.id }).then((response) => {
+      window.location.href = "/";
+    });
+  };
 
   useEffect(handleIndexMovies, []);
 
@@ -41,9 +47,13 @@ export function MoviesIndexPage() {
                 <div className="card-body">
                   <h5 className="card-title">{movie.name}</h5>
                   <p className="card-text"> {movie.movie}</p>
-                  <a className="btn btn-primary" href={`/movies/${movie.id}`}>
-                    Go to show page
-                  </a>
+                  <button
+                    onClick={() => handleCreateFavorite(movie)}
+                    className="btn btn-primary"
+                    href={`/movies/${movie.id}`}
+                  >
+                    Add to Favorites
+                  </button>
                 </div>
               </div>
             </div>

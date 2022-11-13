@@ -29,9 +29,3 @@ export function MoviesNew(props) {
     </div>
   );
 }
-
-// stopped at react create function everything esle funtional back and front end!
-
-// axioos is http requesr and the change is to convert to request from web request not fake data.
-
-// question .. should line 10 be an <img/> tag? for image url? Image: <input image="url" type="text"/> ..does it even matter?

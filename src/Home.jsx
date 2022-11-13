@@ -95,11 +95,11 @@ export function Home() {
     <div>
       <LogoutLink />
       <h1>Welcome to Pick-a-Flick!</h1>
-      <MoviesNew onCreateMovie={handleCreateMovie} />
-      <MoviesIndex movies={movies} onShowMovie={handleShowMovie} />
+      {/* <MoviesNew onCreateMovie={handleCreateMovie} />
+      <MoviesIndex movies={movies} onShowMovie={handleShowMovie} /> */}
 
-      <FavoritesIndex favorites={favorites} onShowFavorite={handleShowFavorite} />
       <FavoritesNew movies={movies} onCreateFavorite={handleCreateFavorite} />
+      <FavoritesIndex favorites={favorites} onShowFavorite={handleShowFavorite} />
       <Modal show={isMoviesShowVisible} onClose={handleClose}>
         <MoviesShow movie={currentMovie} onDestroyMovie={handleDestroyMovie} />
       </Modal>

@@ -10,6 +10,21 @@ export function MoviesSearch(props) {
       setMovies([response.data]);
     });
   };
+  const handleClick = (movie) => {
+    console.log("handleClick", movie);
+    const params = {
+      name: movie.Title,
+      image_url: movie.Poster,
+      description: movie.Plot,
+      genre: movie.Genre,
+    };
+    axios.post("http://localhost:3000/movies.json", params).then((response) => {
+      const params = { movie_id: response.data.id };
+      axios.post("http://localhost:3000/favorites.json", params).then((response) => {
+        window.location.href = "/";
+      });
+    });
+  };
   return (
     <div>
       <h1>Search Movies</h1>
@@ -21,7 +36,6 @@ export function MoviesSearch(props) {
           Search
         </button>
       </form>
-
       {movies.map((movie) => (
         <div className="col-md-3 mb-4" key={movie.imdbID}>
           <div className="card">
@@ -33,8 +47,8 @@ export function MoviesSearch(props) {
               <p className="card-text">Genre: {movie.Genre}</p>
               <p className="card-text">Rating: {movie.Rated}</p>
               <p className="card-text">Plot: {movie.Plot}</p>
-              <button className="btn btn-primary mt-4" type="submit">
-                Favorite This Flick!
+              <button className="btn btn-primary mt-4" onClick={() => handleClick(movie)}>
+                Add to Favorites!
               </button>
             </div>
           </div>
