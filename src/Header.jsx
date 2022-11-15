@@ -64,13 +64,18 @@ export function Header() {
                   Logout
                 </a>
               </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/about">
+                  About
+                </a>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
       {/* <Link to="/">Home</Link> */}
 
-      <Link to="/about">About</Link>
+      {/* <Link to="/about">About</Link> */}
       {/* <Link to="/favorites">Favorites</Link> */}
       {/* <Link to="/login">Login</Link> */}
       {/* <Link to="/signup">Signup</Link> */}
