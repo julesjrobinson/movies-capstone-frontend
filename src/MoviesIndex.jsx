@@ -5,7 +5,7 @@ export function MoviesIndex(props) {
       <div className="row">
         {props.movies.map((movie) => (
           <div className="col-md-3 mb-4" key={movie.id}>
-            <div className="card">
+            <div className="card shadow-lg p-3 mb-5 bg-body rounded">
               <img src={movie.image_url} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">{movie.title}</h5>
