@@ -5,7 +5,7 @@ export function FavoritesIndex(props) {
       <div className="row">
         {props.favorites.map((favorite) => (
           <div className="col-md-3 mb-4" key={favorite.id}>
-            <div className="card">
+            <div className="card shadow-lg p-3 mb-5 bg-body rounded">
               <img src={favorite.image_url} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">{favorite.name}</h5>

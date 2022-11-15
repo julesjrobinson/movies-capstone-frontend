@@ -4,8 +4,9 @@ html {
 
 
 #root {
-  font-family: Futura;
-  background-image: url('https://images.pexels.com/photos/33129/popcorn-movie-party-entertainment.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  font-family: Comic Sans Ms;
+  background-image: url('https://images.pexels.com/photos/33129/popcorn-movie-party-entertainment.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') ;
+  background-size: cover;
 }
 
 .card img {
