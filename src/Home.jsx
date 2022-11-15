@@ -94,7 +94,7 @@ export function Home() {
   return (
     <div>
       {/* <LogoutLink /> */}
-      <h1>Welcome to Pick-a-Flick!</h1>
+      {/* <h1>Welcome to Pick-a-Flick!</h1> */}
       {/* <MoviesNew onCreateMovie={handleCreateMovie} />
       <MoviesIndex movies={movies} onShowMovie={handleShowMovie} /> */}
 
