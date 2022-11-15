@@ -7,6 +7,13 @@ export function Header() {
       <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
+            <img
+              src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e200e0a7-9c17-4e2a-9b0c-e07acaa10294/dfb7lan-d4e22dd8-ddcd-4064-97b4-ca21274f924e.png/v1/fill/w_938,h_541,strp/red_vhs_tape_asset_by_ryanandradedeabreu_dfb7lan-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTQxIiwicGF0aCI6IlwvZlwvZTIwMGUwYTctOWMxNy00ZTJhLTliMGMtZTA3YWNhYTEwMjk0XC9kZmI3bGFuLWQ0ZTIyZGQ4LWRkY2QtNDA2NC05N2I0LWNhMjEyNzRmOTI0ZS5wbmciLCJ3aWR0aCI6Ijw9OTM4In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.I26lQQhwSyDsSS80H-by1ZDBtXI29kfFqeJ-OetDYtw"
+              alt="Logo"
+              width="30"
+              height="24"
+              class="d-inline-block align-text-top mx-2"
+            />
             Pick-a-Flick
           </a>
           <button
