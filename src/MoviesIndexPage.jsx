@@ -1,9 +1,12 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Modal } from "./Modal";
 
 export function MoviesIndexPage() {
   const [searchFilter, setSearchFilter] = useState("");
   const [movies, setMovies] = useState([]);
+  const [isMoviesShowVisible, setIsMoviesShowVisible] = useState(false);
+  const [currentMovie, setCurrentMovie] = useState({});
 
   const handleIndexMovies = () => {
     console.log("Here's all of the movies...");
@@ -12,11 +15,26 @@ export function MoviesIndexPage() {
       setMovies(response.data);
     });
   };
+  const handleClick = (movie) => {
+    console.log("handleClick", movie);
+  };
+
   const handleCreateFavorite = (movie) => {
     console.log("handleCreateFavorite");
     axios.post("http://localhost:3000/favorites.json", { movie_id: movie.id }).then((response) => {
       window.location.href = "/";
     });
+  };
+
+  const handleShowMovies = (movie) => {
+    console.log("handleShowMovies", movie);
+    setIsMoviesShowVisible(true);
+    setCurrentMovie(movie);
+  };
+
+  const handleClose = () => {
+    console.log("handleClose");
+    setIsMoviesShowVisible(false);
   };
 
   useEffect(handleIndexMovies, []);
@@ -42,23 +60,23 @@ export function MoviesIndexPage() {
           .filter((movie) => movie.name.toLowerCase().includes(searchFilter.toLowerCase()))
           .map((movie) => (
             <div className="col-md-3 mb-4" key={movie.id}>
-              <div className="card">
+              <div className="card shadow-lg p-3 mb-5 bg-body rounded">
                 <img src={movie.image_url} className="card-img-top" alt="..." />
                 <div className="card-body">
                   <h5 className="card-title">{movie.name}</h5>
                   <p className="card-text"> {movie.movie}</p>
-                  <button
-                    onClick={() => handleCreateFavorite(movie)}
-                    className="btn btn-primary"
-                    href={`/movies/${movie.id}`}
-                  >
-                    Add to Favorites
-                  </button>
+
+                  {/* <button className="btn btn-primary" onClick={() => handleClick(movie)}>
+                    More info
+                  </button> */}
                 </div>
               </div>
             </div>
           ))}
       </div>
+      {/* <Modal show={true}>
+        <h1>More Info</h1>
+      </Modal> */}
     </div>
   );
 }
